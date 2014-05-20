@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="exporter-version" content="Evernote Mac 5.5.0 (402474)"/><meta name="altitude" content="29.70018196105957"/><meta name="author" content="hsu-wei-cheng"/><meta name="created" content="2014-02-14 09:44:48 +0000"/><meta name="latitude" content="24.9984157619016"/><meta name="longitude" content="121.4937119890738"/><meta name="updated" content="2014-02-15 02:53:28 +0000"/><title>Preparation</title></head><body style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">
+<div><b>Install 編輯器</b></div>
+<div>
+<hr/></div>
+<div><a href="http://www.sublimetext.com/2">http://www.sublimetext.com/2</a><br/></div>
+<div><br/></div>
+<div><br/></div>
+<div><b>Installation Ruby  （在 Mac os 上,安裝 ruby 環境）</b></div>
+<div>
+<hr/>
+參考網址 <a href="http://railsapps.github.io/installrubyonrails-mac.html">http://railsapps.github.io/installrubyonrails-mac.html</a></div>
+<div><br/></div>
+<div>打開你的鍵盤，開始搜尋(按下下面紅色標示的按鍵)，打下 terminal </div>
+<div>接著就輸入下面擷取安裝的教學指令</div>
+<div><br/></div>
+<div><span><img src="Preparation.resources/Screenshot_2014_2_14_%E4%B8%8B%E5%8D%885_51-2.png" height="161" width="431"/></span><br/></div>
+<div><br/></div>
+<div>
+<p style="box-sizing: border-box; padding: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; line-height: 22px; text-rendering: optimizelegibility; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);">The <span style="box-sizing: border-box;">RVM</span> website explains <a href="https://rvm.io/rvm/install/" style="box-sizing: border-box; color: rgb(0, 140, 186); text-decoration: none; line-height: inherit;">how to install <span style="box-sizing: border-box;">RVM</span></a>. Here’s the simplest way:</p>
+<pre style="box-sizing: border-box; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 14px; white-space: pre-wrap; padding: 0px 3px 2px; background-color: rgb(245, 245, 245); border: 1px solid rgba(0, 0, 0, 0.14902); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; line-height: 22px; word-break: break-all; color: rgb(51, 51, 51);">
+$ \curl -L <a href="https://get.rvm.io">https://get.rvm.io</a> | bash -s stable --ruby
+
+</pre>
+<p style="box-sizing: border-box; padding: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; line-height: 22px; text-rendering: optimizelegibility; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);">Note the backslash before “curl” (this avoids potential version conflicts).</p>
+<p style="box-sizing: border-box; padding: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; line-height: 22px; text-rendering: optimizelegibility; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);">The “—ruby” flag will install the newest version of Ruby.</p>
+<p style="box-sizing: border-box; padding: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; line-height: 22px; text-rendering: optimizelegibility; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);"><span style="box-sizing: border-box;">RVM</span> includes an “autolibs” option to identify and install components needed for your operating system. See the article <a href="https://blog.engineyard.com/2013/rvm-ruby-2-0" style="box-sizing: border-box; color: rgb(0, 140, 186); text-decoration: none; line-height: inherit;"><span style="box-sizing: border-box;">RVM</span> Autolibs: Automatic Dependency Handling and Ruby 2.0</a> for more information.</p>
+<p style="box-sizing: border-box; padding: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; line-height: 22px; text-rendering: optimizelegibility; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);">On a new, clean version of Mac OS X, <span style="box-sizing: border-box;">RVM</span> will check requirements and install MacPorts (you may need to enter your user password).<span style="box-sizing: border-box;">RVM</span> will update your system and install dependencies required for installing Ruby on Mac OS X. You may be prompted to install a Java SE 6 runtime (for the javac Java compiler).</p>
+<h4 style="box-sizing: border-box; padding: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); text-rendering: optimizelegibility; line-height: 22px; font-size: 16px; background-color: rgb(255, 255, 255);">If You Already Have <span style="box-sizing: border-box;">RVM</span> Installed</h4>
+<p style="box-sizing: border-box; padding: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; line-height: 22px; text-rendering: optimizelegibility; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255);">If you already have <span style="box-sizing: border-box;">RVM</span> installed, update it to the latest version and install Ruby:</p>
+<pre style="box-sizing: border-box; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 14px; white-space: pre-wrap; padding: 0px 3px 2px; background-color: rgb(245, 245, 245); border: 1px solid rgba(0, 0, 0, 0.14902); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; line-height: 22px; word-break: break-all; color: rgb(51, 51, 51);">
+$ rvm get stable --autolibs=enable
+$ rvm install ruby
+$ rvm --default use ruby-2.1.0
+</pre></div>
+<div><br/>
+<br/>
+<hr/>
+<br/></div>
+<div><b>下載教學影片檔案</b></div>
+<div>
+<hr/></div>
+<div>有空可以自己先看, Rubymine 這個 IDE 在 Mac 也有 不過不建議安裝,不需要!!</div>
+<div><a href="http://www.youtube.com/watch?v=1lgu_l4oe8c&amp;list=PLSXDqiI4sC5NinJXEoYH6FYQ7vtIO8IPF">http://www.youtube.com/watch?v=1lgu_l4oe8c&amp;list=PLSXDqiI4sC5NinJXEoYH6FYQ7vtIO8IPF</a><br/></div>
+<div><br/></div>
+<div style="font-size: 23px;"><b>課程目標</b></div>
+<div>
+<hr/></div>
+<div><br/></div>
+<div style="font-size: 18px;"><b>找出台北市便宜的房子</b></div>
+<div>
+<hr/>
+利用政府提供的 open data, </div>
+<div>進行近年來台灣房地產成交量的趨勢分析。</div>
+<div><a href="http://plvr.land.moi.gov.tw/DownloadOpenData">http://plvr.land.moi.gov.tw/DownloadOpenData</a><br/></div>
+<div><br/></div>
+<div><b><br/></b></div>
+<div style="font-size: 18px;"><b>找出賺錢的方法</b></div>
+<div>
+<hr/></div>
+<div>
+<ol>
+<li>拿出著名的技術分析定律,來推斷第四台老師說的到底正不正確</li>
+<li>我們自己找方法,找出有規律的數據(你如果找的出來,就有機會賺錢了XDDD)</li>
+</ol>
+</div>
+<div><b>欄位說明  開高低收, 成交口數</b></div>
+<div><span><img src="Preparation.resources/Screenshot_2014_2_14_%E4%B8%8B%E5%8D%886_04.png" height="155" width="360"/></span><br/></div>
+<div><br/></div>
+<div><br/></div>
+</body></html>
