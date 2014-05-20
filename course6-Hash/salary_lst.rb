@@ -7,28 +7,27 @@ include ActionView::Helpers
 
 excel_filename= ARGV[0]
 #read Excel
-input = Roo::Excel.new(excel_filename)
+excel = Roo::Excel.new(excel_filename)
 salary_lst = []
 output = Array.new
 summary = Hash.new
-input.default_sheet = input.sheets[0]
+excel.default_sheet = excel.sheets[0]
 
-
-(input.first_row+1).upto(input.last_row) do |line_no|
-  this_row = input.row(line_no)
+(excel.first_row+1).upto(excel.last_row) do |line_no|
+  this_row = excel.row(line_no)
   name = this_row[1].downcase + " " + this_row[2].downcase
   summary[name] = [this_row.first] + this_row[4..-1]
 end
-
-p "type 'q' to quit."
 
 while c = $stdin.gets.downcase.chomp and c != 'q'
   next if 0 == c.strip.length   
   result = summary.keys.grep(/#{c}/)
   ap("Total: #{result.count}")
+  binding.pry
   result.each do |key|
     ap key
     ap(summary[key])
+    binding.pry
   end
 end
 p "bye~bye~"
