@@ -17,6 +17,7 @@ data_source.default_sheet = data_source.sheets[0]
 todo_lst = []
 data_source_lst = []
 
+start_time = Time.now
 # read todo excel
 (todo.first_row+1).upto(todo.last_row) do |line_no|
   todo_lst << todo.row(line_no)
@@ -37,6 +38,8 @@ todo_lst.each do | todo |
     end
   end
 end
+
+p "Elapsed #{Time.now - start_time} sec"
 
 
 #export excel 
