@@ -26,19 +26,14 @@ start_time = Time.now
 end
 # read data_source excel
 (data_source.first_row+7).upto(data_source.last_row) do |line_no|
-  data_source_hash[data_source.row(line_no)[1]] = data_source.row(line_no)[-2]
+  key = data_source.row(line_no)[1]
+  data_source_hash[key] = data_source.row(line_no)[-2]
 end
 
 #each todo list
 todo_lst.each do | todo |
   sn = todo[1]
-  data_source_lst.each do |candidate|
-    #when find the target, save the nationality to todo_lst
-    if data_source_hash.has_key? sn
-      todo << data_source_hash[sn]
-      break
-    end
-  end
+  todo << data_source_hash[sn]
 end
 
 p Time.now - start_time
