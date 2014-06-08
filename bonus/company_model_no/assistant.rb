@@ -1,5 +1,6 @@
 # encoding: utf-8
 require 'roo'
+require 'writeexcel'
 require 'pry'
 
 todo_excel = ARGV[0]
@@ -36,8 +37,14 @@ todo_lst.each do | todo |
   end
 end
 
-#export result
-f = open("export.csv", 'w')
-todo_lst.each do |todo|
-  f.write(todo.join(",")+"\n")
+#export excel 
+wb = WriteExcel.new('export.xls')
+ws = wb.add_worksheet
+
+todo_lst.each.with_index(0) do |todo, i|
+  todo.each.with_index(0) do |cell, j|
+    ws.write(i, j, cell.to_s )
+  end
 end
+# remember to close it
+wb.close()
