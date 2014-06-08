@@ -16,6 +16,9 @@ data_source.default_sheet = data_source.sheets[0]
 # wehre to store
 todo_lst = []
 data_source_lst = []
+data_source_hash = {}
+
+start_time = Time.now
 
 # read todo excel
 (todo.first_row+1).upto(todo.last_row) do |line_no|
@@ -23,7 +26,7 @@ data_source_lst = []
 end
 # read data_source excel
 (data_source.first_row+7).upto(data_source.last_row) do |line_no|
-  data_source_lst << data_source.row(line_no)
+  data_source_hash[data_source.row(line_no)[1]] = data_source.row(line_no)[-2]
 end
 
 #each todo list
@@ -31,12 +34,14 @@ todo_lst.each do | todo |
   sn = todo[1]
   data_source_lst.each do |candidate|
     #when find the target, save the nationality to todo_lst
-    if sn == candidate[1]      
-      todo << candidate[-2]
+    if data_source_hash.has_key? sn
+      todo << data_source_hash[sn]
       break
     end
   end
 end
+
+p Time.now - start_time
 
 
 #export excel 
