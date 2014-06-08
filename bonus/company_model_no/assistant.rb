@@ -33,9 +33,11 @@ todo_lst.each do | todo |
     #when find the target, save the nationality to todo_lst
     if sn == candidate[1]      
       todo << candidate[-2]
+      break
     end
   end
 end
+
 
 #export excel 
 wb = WriteExcel.new('export.xls')
@@ -43,6 +45,7 @@ ws = wb.add_worksheet
 
 todo_lst.each.with_index(0) do |todo, i|
   todo.each.with_index(0) do |cell, j|
+
     ws.write(i, j, cell.to_s )
   end
 end
