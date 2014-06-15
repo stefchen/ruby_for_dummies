@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+hello
+=======
+Change 3
+>>>>>>> remotes/upstream/master

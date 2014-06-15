@@ -6,10 +6,11 @@ attendees_lst =[
   [:Mike, 500],
   [:Zina, 300],
 ]
-attendees_lst.each do | data |
-  if data[0]== :Mike
-    p data
-  end
-end
-
+attendees_hash ={
+  :Mike => 500,
+  :Zina => 300,
+}
+p "please input name:"
+c = gets.chomp.to_sym
+p attendees_hash[:Zina]
 #find mike salary 

@@ -1,6 +1,0 @@
-<<<<<<< HEAD
-test2
-=======
-third time
-3
->>>>>>> remotes/upstream/master
