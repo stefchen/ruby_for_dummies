@@ -20,6 +20,7 @@ data_source_hash = {}
 
 start_time = Time.now
 
+start_time = Time.now
 # read todo excel
 (todo.first_row+1).upto(todo.last_row) do |line_no|
   todo_lst << todo.row(line_no)
@@ -37,7 +38,7 @@ todo_lst.each do | todo |
   todo << data_source_hash[sn]
 end
 
-p Time.now - start_time
+p "Elapsed #{Time.now - start_time} sec"
 
 
 #export excel 
