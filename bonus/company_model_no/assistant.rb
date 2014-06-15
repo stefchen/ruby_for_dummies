@@ -16,6 +16,9 @@ data_source.default_sheet = data_source.sheets[0]
 # wehre to store
 todo_lst = []
 data_source_lst = []
+data_source_hash = {}
+
+start_time = Time.now
 
 start_time = Time.now
 # read todo excel
@@ -24,19 +27,15 @@ start_time = Time.now
 end
 # read data_source excel
 (data_source.first_row+7).upto(data_source.last_row) do |line_no|
-  data_source_lst << data_source.row(line_no)
+  key = data_source.row(line_no)[1]
+  value = data_source.row(line_no)[-2]
+  data_source_hash[key] = value
 end
 
 #each todo list
 todo_lst.each do | todo |
   sn = todo[1]
-  data_source_lst.each do |candidate|
-    #when find the target, save the nationality to todo_lst
-    if sn == candidate[1]      
-      todo << candidate[-2]
-      break
-    end
-  end
+  todo << data_source_hash[sn]
 end
 
 p "Elapsed #{Time.now - start_time} sec"
@@ -48,7 +47,6 @@ ws = wb.add_worksheet
 
 todo_lst.each.with_index(0) do |todo, i|
   todo.each.with_index(0) do |cell, j|
-
     ws.write(i, j, cell.to_s )
   end
 end
