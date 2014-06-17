@@ -2,14 +2,22 @@
 require 'roo'
 require 'writeexcel'
 require 'pry'
-#require 'pry-nav'
-#require 'pry-remote'
+require 'pry-nav'
+require 'pry-remote'
 
-search_target=File.expand_path(File.dirname(_FILE_))
-binding.pry
 
-todo_excel = ARGV[0]
-data_source_excel =ARGV[1] 
+search_target=File.expand_path('./*', File.dirname(__FILE__))
+
+Dir[search_target].each do |current_file|
+
+
+  if File.directory? current_file
+    p "#{current_file} is a directory"
+ 
+
+todo_excel = File.expand_path("todo.xls",current_file)
+data_source_excel =File.expand_path("database.xls",current_file)
+
 #read Excel
 todo = Roo::Excel.new(todo_excel)
 data_source = Roo::Excel.new(data_source_excel)
@@ -49,8 +57,9 @@ todo_lst.each do | todo |
 
  end
 
+export = File.expand_path('export.xls',current_file)
 #export excel 
-  wb = WriteExcel.new('export.xls')
+  wb = WriteExcel.new(export)
   ws = wb.add_worksheet
 
   todo_lst.each.with_index(0) do |todo, i|
@@ -58,5 +67,9 @@ todo_lst.each do | todo |
     ws.write(i, j, cell.to_s )
    end
  end
+
  # remember to close it
  wb.close()
+  end
+end
+
